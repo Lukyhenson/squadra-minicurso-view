@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Contato</h1>
+<div mat-dialog-content>
+
+    <mat-form-field class="app-field">
+        <mat-label>Nome</mat-label>
+        <input maxlength="120" matInput [(ngModel)]="contato.nome">
+    </mat-form-field>
+
+    <mat-form-field class="app-field">
+        <mat-label>Apelido</mat-label>
+        <input maxlength="100" matInput [(ngModel)]="contato.apelido">
+    </mat-form-field>
+
+    <mat-form-field class="app-field">
+        <mat-label>Email</mat-label>
+        <input maxlength="100" matInput [(ngModel)]="contato.email">
+    </mat-form-field>
+
+    <mat-form-field class="app-field">
+        <mat-label>Site</mat-label>
+        <input maxlength="150" matInput [(ngModel)]="contato.site">
+    </mat-form-field>
+
+    <mat-form-field class="app-field">
+        <mat-label>Telefone</mat-label>
+        <input maxlength="11" matInput [(ngModel)]="contato.numero">
+    </mat-form-field>
+
+</div>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="salvar(contato)">Salvar</button>
+    <button mat-raised-button color="warn" (click)="dialog.close()">Cancelar</button>
+</mat-dialog-actions>

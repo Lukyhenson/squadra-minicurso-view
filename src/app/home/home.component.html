@@ -1,0 +1,42 @@
+<mat-sidenav-container class="app-sidenav-container">
+  <mat-sidenav #start [mode]="'push'" class="app-sidebar">
+
+    <div class="app-user">
+      <div class="app-user-photo">
+        <mat-icon matListIcon>person</mat-icon>
+      </div>
+
+      <p class="app-user-name">
+        <mat-icon matListIcon>lock</mat-icon>
+        <span>Usuário</span>
+      </p>
+    </div>
+
+    <mat-list role="list">
+      <mat-list-item class="app-menu" [routerLink]="['/contato']">
+        <mat-icon matListIcon>contacts</mat-icon>
+        <h3 matLine>Contato</h3>
+      </mat-list-item>
+
+      <mat-list-item class="app-menu" [routerLink]="['/cliente']">
+        <mat-icon matListIcon>people</mat-icon>
+        <h3 matLine>Cliente</h3>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar class="app-sidenav-toolbar">
+      <mat-toolbar-row class="mat-elevation-z6">
+        <button class="mat-icon-button" id="sidenavToggle" mat-icon-button="" (click)="start.toggle(undefined, 'mouse')">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

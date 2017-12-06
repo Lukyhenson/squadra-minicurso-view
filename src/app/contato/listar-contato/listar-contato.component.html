@@ -1,0 +1,46 @@
+<mat-toolbar class="app-sidenav-toolbar">Listar Contato</mat-toolbar>
+
+<div class="app-action-container">
+    <button mat-raised-button color="primary" (click)="incluir()">
+        <mat-icon>add</mat-icon>
+        <span>Novo</span>
+    </button>
+</div>
+
+<div class="app-table-container mat-elevation-z8">
+
+    <mat-table #table [dataSource]="contatos">
+        <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+
+        <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef class="app-text-center">Nome</mat-header-cell>
+            <mat-cell *matCellDef="let contato" class="app-text-center">{{contato.nome}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="apelido">
+            <mat-header-cell *matHeaderCellDef class="app-text-center">Apelido</mat-header-cell>
+            <mat-cell *matCellDef="let contato" class="app-text-center">{{contato.apelido}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="telefone">
+            <mat-header-cell *matHeaderCellDef class="app-text-center">Telefone</mat-header-cell>
+            <mat-cell *matCellDef="let contato" class="app-text-center">{{contato.numero}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef class="app-text-center">Email</mat-header-cell>
+            <mat-cell *matCellDef="let contato" class="app-text-center">{{contato.email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="acao">
+            <mat-header-cell *matHeaderCellDef class="app-text-center">Ação</mat-header-cell>
+            <mat-cell *matCellDef="let contato" class="app-text-center">
+                <button mat-mini-fab color="primary" (click)="alterar(contato)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+    </mat-table>
+
+</div>
